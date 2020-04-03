@@ -1,11 +1,17 @@
 <script>
     const characters = [
-        { name: 'Spellweaver', color: 'red' },
-        { name: 'Summoner', color: 'red'},
-        { name: 'Quartermaster', color: 'red'},
-        { name: 'Sunkeeper', color: 'red'},
-        { name: 'Mindthief', color: 'red'},
-    ].map(c => {
+        { name: 'Brute' },
+        { name: 'Cragheart' },
+        { name: 'Mindthief'},
+        { name: 'Quartermaster'},
+        { name: 'Scoundrel' },
+        { name: 'Spellweaver' },
+        { name: 'Summoner'},
+        { name: 'Sunkeeper'},
+        { name: 'Tinkerer' },
+    ]
+        .sort((a, b) => a.name.localeCompare(b.name))
+    .map(c => {
         return {
             ...c,
             img: 'character-icons/' + c.name.toLowerCase() + '.png',
@@ -24,7 +30,7 @@
 
     li {
         padding: 0;
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
     label {
@@ -33,43 +39,19 @@
         cursor: pointer;
     }
 
-    input {
+    input[type="radio"] {
         display: none;
     }
 
-    input + span {
-        position: relative;
-        color: #555;
+    input[type="radio"] + span + span {
+        color: #777;
         font-family: Gloom;
-        font-size: 20px;
-        padding: 4px 8px;
+        font-size: 28px;
         transition: all 150ms;
     }
     
-    input:checked + span {
+    input:checked + span + span {
         color: #222;
-    }
-
-    input + span::before {
-        box-sizing: border-box;
-        content: '';
-        z-index: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        border: 3px solid transparent;
-        border-radius: 2px;
-        transition: all 150ms;
-    }
-
-    label:hover input + span::before {
-        border-color: #555;
-    }
-
-    input:checked + span:before {
-        border-color: #222;
     }
 
     .characters__item__img {
@@ -77,12 +59,12 @@
         width: 45px;
         align-items: center;
         justify-content: center;
-        margin-right: 7px;
+        margin-right: 16px;
     }
 
     .characters__item__img img {
-        max-width: 45px;
-        max-height: 45px;
+        max-width: 40px;
+        max-height: 40px;
     }
 </style>
 
@@ -95,7 +77,7 @@
                 <span class="characters__item__img">
                     <img src={character.img} alt={character.name}>
                 </span>
-                <span style:color={character.color}>{character.name}</span>
+                <span>{character.name}</span>
             </label>
         </li>
 	{   /each}
