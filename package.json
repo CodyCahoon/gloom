@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "gloom",
+  "description": "A web app to help track character attack modifiers",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

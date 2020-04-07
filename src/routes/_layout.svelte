@@ -1,12 +1,7 @@
 <script>
 	import Nav from '../components/Nav.svelte';
-	import Button from '../components/Button.svelte';
 
 	export let segment;
-
-	export const handler = () => {
-		alert('erer');
-	}
 </script>
 
 <style>
@@ -21,7 +16,6 @@
 </style>
 
 <Nav {segment}/>
-<Button text='Test' onClick={handler}/>
 
 <main>
 	<slot></slot>

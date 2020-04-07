@@ -1,13 +1,5 @@
-<script>
-	import CharacterSelection from '../components/CharacterSelection.svelte';
-</script>
-
 <svelte:head>
-	<title>About</title>
+	<title>Gloomhaven - About</title>
 </svelte:head>
 
-<h1>About this site</h1>
-
-<p>This is the 'about' page. There's not much here.</p>
-
-<CharacterSelection />
+<p>An application to help track attack modifiers</p>
