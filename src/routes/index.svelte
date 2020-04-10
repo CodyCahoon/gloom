@@ -1,5 +1,6 @@
 <script>
 	import CharacterSelection from '../components/CharacterSelection.svelte';
+	import Perks from '../components/Perks.svelte';
 </script>
 
 <svelte:head>
@@ -7,3 +8,4 @@
 </svelte:head>
 
 <CharacterSelection />
+<Perks />
