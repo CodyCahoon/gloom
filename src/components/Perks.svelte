@@ -1,11 +1,5 @@
 <script>
     import { character } from '../stores.js';
-    
-    let characterValue;
-
-	const unsubscribe = character.subscribe(value => {
-		characterValue = value;
-	});
 </script>
 
 <style>
@@ -16,5 +10,5 @@
 
 <section class="perks panel">
     <h2 class="panel__title">Perks</h2>
-    <main>Perks for: {characterValue} go here</main>
+    <main>Perks for: {$character} go here</main>
 </section>
