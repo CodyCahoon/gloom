@@ -1,4 +1,7 @@
 <script>
+    import { character } from '../stores.js';
+
+
     const characters = [
         { name: 'Brute' },
         { name: 'Cragheart' },
@@ -19,15 +22,11 @@
     })
 
     let selectedCharacter = characters[0].name;
+
+    $: character.set(selectedCharacter);
 </script>
 
 <style>
-    .characters {
-        display: inline-block;
-        background: white;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        padding: 0 30px 0 20px;
-    }
     ul {
         list-style: none;
         padding: 0;
@@ -74,7 +73,8 @@
     }
 </style>
 
-<section class="characters">
+<section class="characters panel">
+    <h2 class="panel__title">Characters</h2>
     <ul>
         {#each characters as character}
         <li>
@@ -89,5 +89,3 @@
 	{   /each}
     </ul>
 </section>
-
-<p>Selected Character: {selectedCharacter}</p>
