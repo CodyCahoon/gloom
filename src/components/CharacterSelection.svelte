@@ -22,6 +22,12 @@
 </script>
 
 <style>
+    .characters {
+        display: inline-block;
+        background: white;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        padding: 0 30px 0 20px;
+    }
     ul {
         list-style: none;
         padding: 0;
