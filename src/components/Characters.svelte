@@ -21,8 +21,7 @@
         };
     })
 
-    let selectedCharacter = characters[0].name;
-
+    let selectedCharacter = $character;
     $: character.set(selectedCharacter);
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-	import CharacterSelection from '../components/CharacterSelection.svelte';
+	import Characters from '../components/Characters.svelte';
 	import Perks from '../components/Perks.svelte';
 </script>
 
@@ -7,5 +7,5 @@
 	<title>Gloomhaven - Characters</title>
 </svelte:head>
 
-<CharacterSelection />
+<Characters />
 <Perks />
