@@ -1,33 +1,29 @@
 <script>
-    export let perk = 'Example';
-
+    export let perk;
 
     const regexes = [
         { 
-            description: 'Matches elements such as [ICE] [FIRE] [WIND]',
+            description: 'Matches elements, status effects and others',
             pattern: /\[\w+\]/gm, 
             fn: match => {
-                const element = match.substring(1, match.length - 1).toLowerCase();
-                return `<img class="perk__img" src="elements/${element}.png" />`;
+                const icon = match.substring(1, match.length - 1).toLowerCase();
+                return `<img class="perk__img" src="icons/${icon}.png" />`;
             }
         },
         { 
-            description: 'Matches damage modifiers such as (+0) (+1) (-2)',
-            pattern: /\([-\+]\d\)/gm, 
+            description: 'Matches damage modifiers',
+            pattern: /\[[-\+]\d\]/gm, 
             fn: match => {
                 const damageModifier = match.substring(1, match.length - 1).toLowerCase();
-                return `<img class="perk__img" src="damage-modifiers/${damageModifier}.png" />`;
+                return `<img class="perk__img" src="icons/${damageModifier}.png" />`;
             }
         }
     ];
 
     let parsedPerk = perk;
-
     regexes.forEach(regex => {
         parsedPerk = parsedPerk.replace(regex.pattern, regex.fn);
     });
-
-   
 </script>
 
 <style>
