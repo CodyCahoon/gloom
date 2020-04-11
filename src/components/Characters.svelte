@@ -41,10 +41,15 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        position: relative;
     }
 
     input[type="radio"] {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
     }
 
     input[type="radio"] + span + span {
@@ -54,6 +59,7 @@
         transition: all 150ms;
     }
     
+    input:focus + span + span,
     input:checked + span + span {
         color: #222;
     }
