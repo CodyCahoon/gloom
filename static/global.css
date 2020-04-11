@@ -3,6 +3,11 @@
   src: url('./fonts/PirataOne-Gloomhaven.ttf');
 }
 
+@font-face {
+  font-family: GloomText;
+  src: url('./fonts/HighTower.ttf');
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -1,5 +1,11 @@
 <script>
-    import { character } from '../stores.js';
+    import { availablePerks, character } from '../stores.js';
+    import Perk from './Perk.svelte';
+    
+    let perks = [];
+    availablePerks.subscribe(p => {
+        perks = p;
+    });
 </script>
 
 <style>
@@ -10,5 +16,7 @@
 
 <section class="perks panel">
     <h2 class="panel__title">Perks</h2>
-    <main>Perks for: {$character} go here</main>
+    {#each perks as perk}
+        <Perk perk={perk}/>
+    {/each}
 </section>
