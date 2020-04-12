@@ -4,34 +4,38 @@ export const character = writable('Brute')
 export const attackModifiers = createAttackModifiers()
 
 function buildBaseDeck() {
-  const addToDeck = (deck, card, count = 1) => {
-    for (let i = 0; i < count; i++) {
-      deck.push(card)
-    }
-  }
-
-  const baseDeck = []
-  addToDeck(baseDeck, '+0', 6)
-  addToDeck(baseDeck, '+1', 5)
-  addToDeck(baseDeck, '-1', 5)
-  addToDeck(baseDeck, '+2')
-  addToDeck(baseDeck, '-2')
-  addToDeck(baseDeck, '2x')
-  addToDeck(baseDeck, 'null')
-  return baseDeck
+  return [
+    '+0',
+    '+0',
+    '+0',
+    '+0',
+    '+0',
+    '+0',
+    '+1',
+    '+1',
+    '+1',
+    '+1',
+    '+1',
+    '-1',
+    '-1',
+    '-1',
+    '-1',
+    '-1',
+    '-2',
+    '+2',
+    '2x',
+    'null',
+  ]
 }
 
 function createAttackModifiers() {
   const attackModifiers = writable(buildBaseDeck())
-
   const { subscribe, set, update } = attackModifiers
+  
   return {
     subscribe,
     handlePerk: (perk, isChecked) => {
-      const add = (card) =>
-        update((deck) => {
-          return [].concat(deck, card)
-        })
+      const add = (card) => update((deck) => [].concat(deck, card))
 
       const remove = (card) =>
         update((deck) => {
