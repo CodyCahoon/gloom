@@ -1,29 +1,14 @@
 <script>
     export let perk;
 
-    const regexes = [
-        { 
-            description: 'Matches elements, status effects and others',
-            pattern: /\[\w+\]/gm, 
-            fn: match => {
-                const icon = match.substring(1, match.length - 1).toLowerCase();
-                return `<img class="perk__img" src="icons/${icon}.png" />`;
-            }
-        },
-        { 
-            description: 'Matches damage modifiers',
-            pattern: /\[[-\+]\d\]/gm, 
-            fn: match => {
-                const damageModifier = match.substring(1, match.length - 1).toLowerCase();
-                return `<img class="perk__img" src="icons/${damageModifier}.png" />`;
-            }
-        }
-    ];
+    const bracketRegex = /\[[\+-\d\w]+\]/gm;
 
-    let parsedPerk = perk;
-    regexes.forEach(regex => {
-        parsedPerk = parsedPerk.replace(regex.pattern, regex.fn);
-    });
+    const replaceWithIcon = match => {
+        const icon = match.substring(1, match.length - 1).toLowerCase();
+        return `<img class="perk__img" src="icons/${icon}.png" />`;
+    };
+
+    const parsedPerk = perk.replace(bracketRegex, replaceWithIcon);
 </script>
 
 <style>
@@ -69,7 +54,9 @@
     }
 
     :global(.perk__img) {
-        width: 19px;
+        width: 20px;
+        margin-bottom: -4px;
+        display: inline-block;
     }
 </style>
 
