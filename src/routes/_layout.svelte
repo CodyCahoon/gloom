@@ -3,7 +3,6 @@
 		position: relative;
 		margin: 40px;
 		box-sizing: border-box;
-		display: flex;
 	}
 </style>
 

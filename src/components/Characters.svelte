@@ -77,19 +77,16 @@
     }
 </style>
 
-<section class="characters panel">
-    <h2 class="panel__title">Characters</h2>
-    <ul>
-        {#each characters as character}
-        <li>
-            <label>
-                <input type="radio" bind:group={selectedCharacter} value={character.name}>
-                <span class="characters__item__img">
-                    <img src={character.img} alt={character.name}>
-                </span>
-                <span>{character.name}</span>
-            </label>
-        </li>
-	{   /each}
-    </ul>
-</section>
+<ul>
+    {#each characters as character}
+    <li>
+        <label>
+            <input type="radio" bind:group={selectedCharacter} value={character.name}>
+            <span class="characters__item__img">
+                <img src={character.img} alt={character.name}>
+            </span>
+            <span>{character.name}</span>
+        </label>
+    </li>
+{   /each}
+</ul>
