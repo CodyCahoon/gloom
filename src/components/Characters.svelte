@@ -1,7 +1,6 @@
 <script>
     import { character } from '../stores.js';
 
-
     const characters = [
         { name: 'Brute' },
         { name: 'Cragheart' },

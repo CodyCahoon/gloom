@@ -1,4 +1,6 @@
 <script>
+    import { attackModifiers } from '../stores.js';
+
     export let perk;
 
     const bracketRegex = /\[[\+-\d\w]+\]/gm;
@@ -8,7 +10,11 @@
         return `<img class="perk__img" src="icons/${icon}.png" />`;
     };
 
-    const parsedPerk = perk.replace(bracketRegex, replaceWithIcon);
+    const perkText = perk.text.replace(bracketRegex, replaceWithIcon);
+
+    const onChange = (event) => {
+        attackModifiers.handlePerk(perk, event.target.checked);
+    };
 </script>
 
 <style>
@@ -61,7 +67,7 @@
 </style>
 
 <label>
-    <input type="checkbox" value={perk}>
-    <span>{@html parsedPerk}</span>
+    <input type="checkbox" value={perk} on:change={onChange}>
+    <span>{@html perkText}</span>
 </label>
       
