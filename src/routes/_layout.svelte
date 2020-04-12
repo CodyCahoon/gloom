@@ -1,11 +1,11 @@
 <style>
-	main {
-		position: relative;
-		margin: 40px;
-		box-sizing: border-box;
-	}
+  main {
+    position: relative;
+    margin: 40px;
+    box-sizing: border-box;
+  }
 </style>
 
 <main>
-	<slot></slot>
+  <slot />
 </main>

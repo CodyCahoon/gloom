@@ -31,14 +31,14 @@ function buildBaseDeck() {
 function createAttackModifiers() {
   const attackModifiers = writable(buildBaseDeck())
   const { subscribe, set, update } = attackModifiers
-  
+
   return {
     subscribe,
     handlePerk: (perk, isChecked) => {
-      const add = (card) => update((deck) => [].concat(deck, card))
+      const add = card => update(deck => [].concat(deck, card))
 
-      const remove = (card) =>
-        update((deck) => {
+      const remove = card =>
+        update(deck => {
           const index = deck.indexOf(card)
           if (index === -1) {
             return deck
@@ -49,18 +49,18 @@ function createAttackModifiers() {
       const { modifiersToAdd, modifiersToRemove } = perk
 
       if (isChecked) {
-        modifiersToAdd.forEach((m) => add(m))
-        modifiersToRemove.forEach((m) => remove(m))
+        modifiersToAdd.forEach(m => add(m))
+        modifiersToRemove.forEach(m => remove(m))
       } else {
-        modifiersToAdd.forEach((m) => remove(m))
-        modifiersToRemove.forEach((m) => add(m))
+        modifiersToAdd.forEach(m => remove(m))
+        modifiersToRemove.forEach(m => add(m))
       }
     },
     reset: () => set(buildBaseDeck()),
   }
 }
 
-export const availablePerks = derived(character, ($character) => {
+export const availablePerks = derived(character, $character => {
   if ($character === 'Spellweaver') {
     return [
       {
