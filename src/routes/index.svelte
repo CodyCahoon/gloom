@@ -36,7 +36,7 @@
 
   <!-- Character Selection -->
   <section class="panel">
-    <h2 class="panel__title">Character</h2>
+    <h2 class="panel__title">Characters</h2>
     <Characters />
   </section>
 

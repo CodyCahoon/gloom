@@ -25,6 +25,10 @@
     position: relative;
   }
 
+  input[type='checkbox']:last-of-type {
+    margin-right: 6px;
+  }
+
   input[type='checkbox'] + span {
     color: #222;
     font-family: GloomText;

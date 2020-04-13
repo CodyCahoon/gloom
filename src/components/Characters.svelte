@@ -33,7 +33,7 @@
 
   li {
     padding: 0;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   label {
@@ -54,7 +54,7 @@
   input[type='radio'] + span + span {
     color: #777;
     font-family: Gloom;
-    font-size: 28px;
+    font-size: 24px;
     transition: all 150ms;
   }
 
@@ -65,15 +65,15 @@
 
   .characters__item__img {
     display: inline-flex;
-    width: 45px;
+    width: 30px;
     align-items: center;
     justify-content: center;
-    margin-right: 16px;
+    margin-right: 12px;
   }
 
   .characters__item__img img {
-    max-width: 40px;
-    max-height: 40px;
+    max-width: 25px;
+    max-height: 25px;
   }
 </style>
 
