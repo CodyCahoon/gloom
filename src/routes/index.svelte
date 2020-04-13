@@ -1,4 +1,5 @@
 <script>
+  import AttackModifiers from '../components/AttackModifiers.svelte'
   import Characters from '../components/Characters.svelte'
   import Perks from '../components/Perks.svelte'
 </script>
@@ -15,6 +16,7 @@
     margin-right: 20px;
     border-radius: 2px;
     flex-grow: 1;
+    width: calc(33% - 20px);
   }
 
   .panel__title {
@@ -42,5 +44,10 @@
   <section class="panel">
     <h2 class="panel__title">Perks</h2>
     <Perks />
+  </section>
+
+  <section class="panel">
+    <h2 class="panel__title">Attack Modifiers</h2>
+    <AttackModifiers />
   </section>
 </main>
