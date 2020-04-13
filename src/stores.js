@@ -72,21 +72,13 @@ export const availablePerks = derived(character, $character => {
         text: 'Replace one [-1] card with one [+1] card',
         modifiersToAdd: ['+1'],
         modifiersToRemove: ['-1'],
-      },
-      {
-        text: 'Replace one [-1] card with one [+1] card',
-        modifiersToAdd: ['+1'],
-        modifiersToRemove: ['-1'],
+        isDouble: true,
       },
       {
         text: 'Add two [+1] cards',
         modifiersToAdd: ['+1', '+1'],
         modifiersToRemove: [],
-      },
-      {
-        text: 'Add two [+1] cards',
-        modifiersToAdd: ['+1', '+1'],
-        modifiersToRemove: [],
+        isDouble: true,
       },
       {
         text: 'Add one [+0] [STUN] card',
@@ -112,21 +104,13 @@ export const availablePerks = derived(character, $character => {
         text: 'Add one [+2] [FIRE] card',
         modifiersToAdd: ['+2--fire'],
         modifiersToRemove: [],
-      },
-      {
-        text: 'Add one [+2] [FIRE] card',
-        modifiersToAdd: ['+2--fire'],
-        modifiersToRemove: [],
+        isDouble: true,
       },
       {
         text: 'Add one [+2] [ICE] card',
         modifiersToAdd: ['+2--ice'],
         modifiersToRemove: [],
-      },
-      {
-        text: 'Add one [+2] [ICE] card',
-        modifiersToAdd: ['+2--ice'],
-        modifiersToRemove: [],
+        isDouble: true,
       },
       {
         text: 'Add one [ROLL] [EARTH] card and one [ROLL] [WIND] card',

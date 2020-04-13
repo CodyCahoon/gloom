@@ -20,32 +20,9 @@
 <style>
   label {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     cursor: pointer;
     position: relative;
-  }
-
-  input[type='checkbox'] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  input[type='checkbox'] + span:before {
-    content: '';
-    display: inline-block;
-    margin-right: 8px;
-    width: 16px;
-    height: 16px;
-    border: 2px solid #222;
-    border-radius: 2px;
-  }
-
-  input[type='checkbox']:checked + span:before {
-    border-color: green;
-    box-shadow: inset 0 0 10px green;
   }
 
   input[type='checkbox'] + span {
@@ -53,10 +30,6 @@
     font-family: GloomText;
     font-size: 20px;
     transition: all 150ms;
-  }
-
-  input:checked + span {
-    color: green;
   }
 
   :global(.perk__img) {
@@ -67,7 +40,10 @@
 </style>
 
 <label>
-  <input type="checkbox" value={perk} on:change={onChange} />
+  <input type="checkbox" on:change={onChange} />
+  {#if perk.isDouble}
+    <input type="checkbox" on:change={onChange} />
+  {/if}
   <span>
     {@html perkText}
   </span>
