@@ -7,39 +7,29 @@
 <style>
   button {
     font-family: Gloom;
-    background-image: linear-gradient(to top, #70573b 0%, #221c12 100%);
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 24px;
-    border: none;
-    padding: 7px 18px;
-    border-radius: 2px;
+    border: 1px solid #222;
+    color:#222;
+    font-size: 20px;
+    padding: 5px 12px;
+    border-radius: 4px;
     transition: all 150ms;
     cursor: pointer;
     position: relative;
-  }
-
-  button::after {
-    position: absolute;
-    content: '';
-    top: 1px;
-    left: 1px;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
-    border: 2px solid transparent;
-    transition: all 150ms;
+    min-width: 80px;
   }
 
   button:hover {
-    color: white;
+    color: black;
   }
 
   button:focus {
     outline: none;
   }
 
-  button:focus::after,
-  button:hover::after {
-    border-color: white;
+  button:focus,
+  button:hover {
+    border-color: black;
+    transform: translateY(-2px);
   }
 </style>
 
