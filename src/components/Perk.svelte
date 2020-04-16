@@ -1,19 +1,19 @@
 <script>
-  import { attackModifiers } from '../stores.js'
+  import { attackModifiers } from '../stores.js';
 
-  export let perk
+  export let perk;
 
-  const bracketRegex = /\[[\+-\d\w]+\]/gm
+  const bracketRegex = /\[[\+-\d\w]+\]/gm;
 
   const replaceWithIcon = match => {
-    const icon = match.substring(1, match.length - 1).toLowerCase()
-    return `<img class="perk__img" src="icons/${icon}.png" />`
+    const icon = match.substring(1, match.length - 1).toLowerCase();
+    return `<img class="perk__img" src="icons/${icon}.png" />`;
   }
 
-  const perkText = perk.text.replace(bracketRegex, replaceWithIcon)
+  const perkText = perk.text.replace(bracketRegex, replaceWithIcon);
 
   const onChange = event => {
-    attackModifiers.handlePerk(perk, event.target.checked)
+    attackModifiers.handlePerk(perk, event.target.checked);
   }
 </script>
 
