@@ -7,6 +7,7 @@
 <style>
   button {
     font-family: Gloom;
+    background-color: transparent;
     border: 1px solid #222;
     color: #222;
     font-size: 20px;
