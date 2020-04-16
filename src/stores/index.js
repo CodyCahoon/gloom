@@ -33,16 +33,32 @@ function buildBaseDeck() {
 }
 
 function createAttackModifiers() {
-  const attackModifiers = writable(buildBaseDeck());
-  const { subscribe, set, update } = attackModifiers;
+  const available = writable(buildBaseDeck());
+  const drawn = writable([]);
 
   return {
-    subscribe,
+    available,
+    drawn,
+    draw: () => {
+      available.update((availableCards) => {
+        if (availableCards.length === 0) {
+          return [];
+        }
+        const index = Math.floor(Math.random() * availableCards.length);
+        drawn.update((drawnCards) =>
+          [].concat(drawnCards, availableCards[index])
+        );
+        return [].concat(
+          availableCards.slice(0, index),
+          availableCards.slice(index + 1)
+        );
+      });
+    },
     handlePerk: (perk, isChecked) => {
-      const add = (card) => update((deck) => [].concat(deck, card));
+      const add = (card) => available.update((deck) => [].concat(deck, card));
 
       const remove = (card) =>
-        update((deck) => {
+        available.update((deck) => {
           const index = deck.indexOf(card);
           if (index === -1) {
             return deck;
@@ -60,7 +76,6 @@ function createAttackModifiers() {
         modifiersToRemove.forEach((m) => add(m));
       }
     },
-    reset: () => set(buildBaseDeck()),
   };
 }
 
