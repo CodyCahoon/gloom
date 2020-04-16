@@ -1,11 +1,9 @@
 <script>
-    import Button from './core/Button.svelte';
+  import Button from './core/Button.svelte';
 
-    const onDraw = () => {};
-    const onShuffle = () => {};
+  const onDraw = () => {};
+  const onShuffle = () => {};
 </script>
 
 <Button text="Draw" onClick={onDraw} />
 <Button text="Shuffle" onClick={onShuffle} />
-
-

@@ -1,9 +1,9 @@
 <script>
-  import AttackModifiers from '../components/AttackModifiers.svelte'
-  import Characters from '../components/Characters.svelte'
-  import Perks from '../components/Perks.svelte'
+  import AttackModifiers from '../components/AttackModifiers.svelte';
+  import Characters from '../components/Characters.svelte';
+  import Perks from '../components/Perks.svelte';
 
-  import Panel from '../components/core/Panel.svelte'
+  import Panel from '../components/core/Panel.svelte';
 </script>
 
 <style>

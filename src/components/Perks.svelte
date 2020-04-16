@@ -1,10 +1,8 @@
 <script>
-  import { availablePerks } from '../stores.js'
-  import Perk from './Perk.svelte'
-
-  const test = ''
+  import { availablePerks, character } from '../stores.js';
+  import Perk from './Perk.svelte';
 </script>
 
-{#each $availablePerks as perk}
+{#each $availablePerks as perk, i ($character + i)}
   <Perk {perk} />
 {/each}

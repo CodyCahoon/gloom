@@ -1,5 +1,5 @@
 <script>
-  import { character } from '../stores.js'
+  import { character } from '../stores.js';
 
   const characters = [
     { name: 'Brute' },
@@ -13,15 +13,15 @@
     { name: 'Tinkerer' },
   ]
     .sort((a, b) => a.name.localeCompare(b.name))
-    .map(c => {
+    .map((c) => {
       return {
         ...c,
         img: 'character-icons/' + c.name.toLowerCase() + '.png',
-      }
-    })
+      };
+    });
 
-  let selectedCharacter = $character
-  $: character.set(selectedCharacter)
+  let selectedCharacter = $character;
+  $: character.set(selectedCharacter);
 </script>
 
 <style>
