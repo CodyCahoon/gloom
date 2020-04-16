@@ -1,14 +1,14 @@
 <script>
-  export let text = 'Button Text is missing'
-  export let type = 'button'
-  export let onClick = () => {}
+  export let text = 'Button Text is missing';
+  export let type = 'button';
+  export let onClick = () => {};
 </script>
 
 <style>
   button {
     font-family: Gloom;
     border: 1px solid #222;
-    color:#222;
+    color: #222;
     font-size: 20px;
     padding: 5px 12px;
     border-radius: 4px;

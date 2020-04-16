@@ -5,16 +5,18 @@
 
   const bracketRegex = /\[[\+-\d\w]+\]/gm;
 
-  const replaceWithIcon = match => {
+  const replaceWithIcon = (match) => {
     const icon = match.substring(1, match.length - 1).toLowerCase();
     return `<img class="perk__img" src="icons/${icon}.png" />`;
-  }
+  };
 
   const perkText = perk.text.replace(bracketRegex, replaceWithIcon);
 
-  const onChange = event => {
+  const instances = Array(perk.instances || 1);
+
+  const onChange = (event) => {
     attackModifiers.handlePerk(perk, event.target.checked);
-  }
+  };
 </script>
 
 <style>
@@ -23,6 +25,11 @@
     align-items: flex-start;
     cursor: pointer;
     position: relative;
+    margin-bottom: 4px;
+  }
+
+  input[type='checkbox'] {
+    margin-top: 8px;
   }
 
   input[type='checkbox']:last-of-type {
@@ -44,10 +51,9 @@
 </style>
 
 <label>
-  <input type="checkbox" on:change={onChange} />
-  {#if perk.isDouble}
+  {#each instances as instance}
     <input type="checkbox" on:change={onChange} />
-  {/if}
+  {/each}
   <span>
     {@html perkText}
   </span>
