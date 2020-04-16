@@ -1,5 +1,5 @@
 <script>
-  import { character } from '../stores.js';
+  import { character } from '../stores/index.js';
 
   const characters = [
     { name: 'Brute' },

@@ -1,5 +1,5 @@
 <script>
-  import { availablePerks, character } from '../stores.js';
+  import { availablePerks, character } from '../stores/index.js';
   import Perk from './Perk.svelte';
 </script>
 

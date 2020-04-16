@@ -1,5 +1,5 @@
 <script>
-  import { attackModifiers } from '../stores.js';
+  import { attackModifiers } from '../stores/index.js';
 
   export let perk;
 
