@@ -1,19 +1,18 @@
-describe('Sapper template app', () => {
+describe('Gloom', () => {
   beforeEach(() => {
     cy.visit('/');
   });
 
-  it('has the correct <h1>', () => {
-    cy.contains('h1', 'Great success!');
-  });
+  describe('Page', () => {
 
-  it('navigates to /about', () => {
-    cy.get('nav a').contains('about').click();
-    cy.url().should('include', '/about');
-  });
+    it('has three panels', () => {
+      cy.get('.panel').should('have.length', 3)
+    });  
 
-  it('navigates to /blog', () => {
-    cy.get('nav a').contains('blog').click();
-    cy.url().should('include', '/blog');
+    it('has the correct panel titles', () => {
+      cy.get('.panel__title').contains('Characters')
+      cy.get('.panel__title').contains('Perks')
+      cy.get('.panel__title').contains('Attack Modifiers')
+    });
   });
 });
