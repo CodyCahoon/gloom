@@ -11,6 +11,7 @@ export default {
       text: 'Remove four [+0] cards',
       modifiersToAdd: [],
       modifiersToRemove: ['+0', '+0', '+0', '+0'],
+      instances: 1,
     },
     {
       text: 'Replace one [+0] card with one [+2] card',
@@ -28,21 +29,25 @@ export default {
       text: 'Add three [ROLL] [MUDDLE] cards',
       modifiersToAdd: ['muddle--roll', 'muddle--roll', 'muddle--roll'],
       modifiersToRemove: [],
+      instances: 1,
     },
     {
-      text: 'Add two [ROLL] PIERCE [PIERCE] 3 card',
-      modifiersToAdd: ['+3--pierce'],
+      text: 'Add two [ROLL] [PIERCE] 3 card',
+      modifiersToAdd: ['pierce3--roll', 'pierce3--roll'],
       modifiersToRemove: [],
+      instances: 1,
     },
     {
       text: 'Add one [ROLL] [STUN] card',
-      modifiersToAdd: ['+stun--roll'],
+      modifiersToAdd: ['stun--roll'],
       modifiersToRemove: [],
+      instances: 1,
     },
     {
       text: 'Add one [ROLL] [TARGET] card',
-      modifiersToAdd: ['+target--roll'],
+      modifiersToAdd: ['target--roll'],
       modifiersToRemove: [],
+      instances: 1,
     },
     {
       text: 'Add one [ROLL] [REFRESH] card',
@@ -54,6 +59,7 @@ export default {
       text: 'Ignore negative item effects and add two [+1] cards',
       modifiersToAdd: ['+1', '+1'],
       modifiersToRemove: [],
+      instances: 1,
     },
   ],
 };

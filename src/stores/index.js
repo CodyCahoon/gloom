@@ -1,8 +1,11 @@
 import { writable, derived } from 'svelte/store';
 
 // Characters
+import Brute from './characters/brute';
 import Spellweaver from './characters/spellweaver';
 import Quartermaster from './characters/quartermaster';
+
+const characters = [Brute, Spellweaver, Quartermaster];
 
 export const character = writable('Brute');
 export const attackModifiers = createAttackModifiers();
@@ -82,15 +85,8 @@ function createAttackModifiers() {
 export const availablePerks = derived(
   character,
   ($character) => {
-    if ($character === 'Spellweaver') {
-      return Spellweaver.perks;
-    }
-
-    if ($character === 'Quartermaster') {
-      return Quartermaster.perks;
-    }
-
-    return [];
+    const c = characters.find((c) => c.name === $character);
+    return c ? c.perks : [];
   },
   []
 );
