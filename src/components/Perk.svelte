@@ -39,12 +39,12 @@
   input[type='checkbox'] + span {
     color: #222;
     font-family: GloomText;
-    font-size: 20px;
+    font-size: 24px;
     transition: all 150ms;
   }
 
   :global(.perk__img) {
-    width: 20px;
+    width: 24px;
     margin-bottom: -4px;
     display: inline-block;
   }
