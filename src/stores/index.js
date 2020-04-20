@@ -2,10 +2,11 @@ import { writable, derived } from 'svelte/store';
 
 // Characters
 import Brute from './characters/brute';
+import Scoundrel from './characters/scoundrel';
 import Spellweaver from './characters/spellweaver';
 import Quartermaster from './characters/quartermaster';
 
-const characters = [Brute, Spellweaver, Quartermaster];
+const characters = [Brute, Scoundrel, Spellweaver, Quartermaster];
 
 export const character = writable('Brute');
 export const attackModifiers = createAttackModifiers();
