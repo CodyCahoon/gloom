@@ -44,7 +44,8 @@
   }
 
   :global(.perk__img) {
-    width: 24px;
+    max-height: 24px;
+    max-width: 24px;
     margin-bottom: -4px;
     display: inline-block;
   }
