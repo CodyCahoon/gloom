@@ -4,14 +4,19 @@
 
   const { available, drawn } = attackModifiers;
 
-  const onDraw = () => {
+  const drawCard = () => {
     attackModifiers.draw();
   };
-  const onShuffle = () => {};
+  const shuffleCards = () => {};
+
+  const addBless = () => {
+    attackModifiers.add('bless');
+  };
 </script>
 
-<Button text="Draw" onClick={onDraw} />
-<Button text="Shuffle" onClick={onShuffle} />
+<Button text="Draw" onClick={drawCard} />
+<Button text="Shuffle" onClick={shuffleCards} />
+<Button text="+ Add Bless" onClick={addBless} />
 
 <ul>
   <label for="">available</label>
