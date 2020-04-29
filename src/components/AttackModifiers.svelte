@@ -9,14 +9,13 @@
   };
   const shuffleCards = () => {};
 
-  const addBless = () => {
-    attackModifiers.add('bless');
-  };
+  const addCard = (card) => () => attackModifiers.add(card);
 </script>
 
 <Button text="Draw" onClick={drawCard} />
 <Button text="Shuffle" onClick={shuffleCards} />
-<Button text="+ Add Bless" onClick={addBless} />
+<Button text="+ Add Bless" onClick={addCard('bless')} />
+<Button text="+ Scenario Effect (-1)" onClick={addCard('-1scenario')} />
 
 <ul>
   <label for="">available</label>
