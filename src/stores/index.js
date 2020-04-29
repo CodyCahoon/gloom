@@ -44,6 +44,12 @@ function createAttackModifiers() {
   return {
     available,
     drawn,
+    add: (card, count = 1) => {
+      available.update(availableCards => {
+        const newCards = Array(count).fill(card);
+        return [].concat(availableCards, newCards);
+      })
+    },
     draw: () => {
       available.update((availableCards) => {
         if (availableCards.length === 0) {
